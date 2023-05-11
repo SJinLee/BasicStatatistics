@@ -81,3 +81,72 @@ tresult3 <- t.test(korea,seoul,var.equal=F)
 tresult3
 ```
 
+```{r}
+ex1 <- c(76,57,72,47,52,76,64,64,66,57,38,58)
+ex2 <- c(89,60,71,65,60,70,71,69,68,66,50,62)
+result4 <- t.test(ex1,ex2,paired=TRUE)
+result4
+```
+```{r}
+qt(0.975,df=11)
+pt(-3.2832,df=11)*2
+```
+```{r}
+c <- c(3.6,4.1,4.0,3.1,3.2,3.9,3.2,3.5,3.5,3.5,3.8,3.8)
+df <- data.frame(cholesterol=c)
+df[['company']] <- rep(LETTERS[1:4],each=3)
+df
+```
+
+```{r}
+av <- aov(df[['cholesterol']]~df[['company']])
+summary(av)
+```
+```{r}
+qf(0.95,df1=3,df2=8)
+```
+```{r}
+tbl <- rbind(c(457,446),c(43,54))
+dimnames(tbl)<-list(c('안다','모른다'),c('남','여'))
+names(dimnames(tbl)) <- c('응답','성별')
+```
+
+```{r}
+tbl
+```
+
+```{r}
+chisq.test(tbl)
+```
+```{r}
+qchisq(0.95,df=1)
+```
+```{r}
+tbl <- rbind(c(28,36,11),c(22,44,9))
+dimnames(tbl)<-list(c('참석','불참'),c('1학년','2학년','3학년'))
+#names(dimnames(tbl)) <- c('응답','성별')
+```
+
+```{r}
+chisq.test(tbl)
+```
+```{r}
+qchisq(0.95,df=2)
+```
+
+```{r}
+tbl <- rbind(c(20,6,7,9),c(6,33,14,7),c(9,7,29,8),c(8,8,10,24))
+dimnames(tbl)<-list(c('스포츠','독서','음악','영화'),
+                    c('1학년','2학년','3학년','4학년'))
+#names(dimnames(tbl)) <- c('응답','성별')
+```
+
+```{r}
+chisq.test(tbl)
+```
+
+```{r}
+qchisq(0.95,df=9)
+```
+
+
