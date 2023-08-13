@@ -6,4 +6,5 @@
 5. install.packages("remotes")
 6. remotes::install("IRkernel/IRkernel")
 7. IRkernel::installspec()
-8. # reboot
+8. q(save="no")
+9. reboot
